@@ -1,0 +1,103 @@
+.logo {
+  width: 50vmin;
+  height: 50vmin;
+  margin: 0 auto;
+  position: relative;
+  perspective: 20vmin;
+
+  --logo--easing: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo__questionmark {
+  --logo__questionmark--size: 60%;
+  position: absolute;
+  height: var(--logo__questionmark--size);
+  width: var(--logo__questionmark--size);
+  top: 20%;
+  left: calc(50% - var(--logo__questionmark--size) / 2);
+  z-index: 1;
+  pointer-events: none;
+  animation: logo__questionmark--appear var(--logo--easing) 2s;
+  animation-fill-mode: both;
+  animation-delay: 1s;
+}
+
+@keyframes logo__questionmark--appear {
+  0% {
+    opacity: 0;
+    transform: rotateX(70deg) translateY(-70%) scale3d(0.2, 0.1, 0.2);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0) translateY(0) scale3d(1, 1, 1);
+  }
+}
+
+.logo__square {
+  border-radius: 0.5vmin;
+  width: 30%;
+  height: 20%;
+  top: 40%;
+  left: 35%;
+
+  position: absolute;
+  --logo__square--rotate3dA: rotate3d(0.8, -0.5, 0.3, 50deg);
+  --logo__square--rotate3dB: rotate3d(0.8, 1, 0.3, 30deg);
+  --logo__square--scale3dA: scale3d(0.6, 0.6, 0.6);
+  --logo__square--scale3dB: scale3d(1, 1, 1);
+  --logo__square--translate3dA: translate3d(0, 0, 0);
+  --logo__square--translate3dB: translate3d(0, 0, 0);
+  animation: logo__square--appear var(--logo--easing) 1s;
+  animation-fill-mode: backwards;
+
+  transform: var(--logo__square--rotate3dB) var(--logo__square--translate3dB)
+  var(--logo__square--scale3dB);
+  transition: transform ease 0.4s;
+}
+
+.logo__square:hover {
+    transform:  var(--logo__square--rotate3dB) var(--logo__square--translate3dB)
+    scale3d(1.1, 1.1, 1.1);
+}
+@keyframes logo__square--appear {
+  0% {
+    opacity: 0;
+    transform: var(--logo__square--rotate3dA) var(--logo__square--translate3dA)
+      var(--logo__square--scale3dA);
+  }
+  100% {
+    opacity: 1;
+    transform: var(--logo__square--rotate3dB) var(--logo__square--translate3dB)
+      var(--logo__square--scale3dB);
+  }
+}
+/* square 1 */
+
+.logo__square-1 {
+  background: crimson;
+  --logo__square--translate3dB: translate3d(-55%, -55%, 0);
+}
+
+/* square 2 */
+
+.logo__square-2 {
+  background: salmon;
+  --logo__square--translate3dB: translate3d(55%, -55%, 0);
+  animation-delay: 0.1s;
+}
+
+/* square 3 */
+
+.logo__square-3 {
+  background: orangered;
+  --logo__square--translate3dB: translate3d(-55%, 55%, 0);
+  animation-delay: 0.2s;
+}
+
+/* square 4 */
+
+.logo__square-4 {
+  background: orange;
+  --logo__square--translate3dB: translate3d(55%, 55%, 0);
+  animation-delay: 0.3s;
+}
