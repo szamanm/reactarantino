@@ -9,13 +9,13 @@
 }
 
 .logo__questionmark {
-  --logo__questionmark--size: 60%;
+  --logo__questionmark--size: 40%;
   position: absolute;
   height: var(--logo__questionmark--size);
   width: var(--logo__questionmark--size);
-  top: 20%;
+  top: 30%;
   left: calc(50% - var(--logo__questionmark--size) / 2);
-  z-index: 1;
+  z-index: 10;
   pointer-events: none;
   animation: logo__questionmark--appear var(--logo--easing) 2s;
   animation-fill-mode: both;
@@ -25,11 +25,11 @@
 @keyframes logo__questionmark--appear {
   0% {
     opacity: 0;
-    transform: rotateX(70deg) translateY(-70%) scale3d(0.2, 0.1, 0.2);
+    transform: rotateX(70deg) translate3d(0, -250%, -10vmin);
   }
   100% {
     opacity: 1;
-    transform: rotateX(0) translateY(0) scale3d(1, 1, 1);
+    transform: rotateX(0) translate3d(0, 0, 7vmin);
   }
 }
 
